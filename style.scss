@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+
+html {scroll-behavior: smooth;}
+ 
+:root {
+    --text-color: black;
+    --button-color: #673ab7;
+    --input-color: #ffd740;
+    --body-color: #FFF3E0;
+    --select-color: #f599c3;
+    --secondary-color: black;
+    --toggle-color: #ffc107;
+    --darkest-color: #ffa000;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+body {
+    transition: 1s all;
+    background-color: var(--body-color);
+}
+
+.heading {
+    padding: 100px 0px 20px 0px;
+    background-color: var(--darkest-color);
+    .container {
+        .row {
+            h1 {
+                font-size: 40px;
+                text-align: center;
+                color: var(--text-color);
+            }
+            
+        }
+    }
+}
+
+.name-of-list {
+    background-color: var(--darkest-color);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin-bottom: 20px;
+    .container {
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            >i {
+                position: relative;
+                font-size: 25px;
+                color: var(--text-color);
+                margin-bottom: 15px;
+                cursor: pointer;
+                .ListOfList {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: var(--toggle-color);
+                    border-radius: 20px;
+                    padding: 5px;
+                    position: absolute;
+                    transition: 0.3s all;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: scale(0);
+                    left: -50px;
+                    top: -50px;
+                    &:hover {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: scale(1);
+                        left: 0;
+                        top: 25px;
+                    }
+                    &.active {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: scale(1);
+                        left: 0;
+                        top: 25px;
+                    }
+                    label {
+                        display: inline-block;
+                        padding: 4px 0;
+                        width: 120px;
+                        border-radius: 20px;
+                        margin-bottom: 10px;
+                        color: var(--text-color);
+                        text-align: center;
+                        border: none;
+                        cursor: pointer;
+                        transition: 0.3s all;
+                        &:active {
+                            transform: scale(0.9);
+                        }
+                        font-size: 18px;
+                        font-weight: 800;
+                    }
+                    .list-array {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        >button {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            position: relative;
+                            border: none;
+                            border-radius: 20px;
+                            width: 120px;
+                            margin-bottom: 10px;
+                            color: var(--text-color);
+                            background-color: transparent;
+                            font-size: 18px;
+                            font-weight: 800;
+                            cursor: pointer;
+                            transition: 0.3s all;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            text-align: start;
+                            &:active {
+                                transform: scale(0.9);
+                            }
+                            .fa-list-ul {
+                                font-size: 14px;
+                                margin-right: 5px;
+                            }
+                            .fa-circle-xmark {
+                                color: black;
+                                background-color: red;
+                                border-radius: 50%;
+                                position: absolute;
+                                right: 3px;
+                                top: 2px;
+                                opacity: 0;
+                                visibility: hidden;
+                                transition: all 0.3s;
+                                &:hover {
+                                    transform: scale(1.2);
+                                }
+                            }
+                            &:hover i {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                    }
+                    form {
+                        input {
+                            width: 0;
+                            height: 0;
+                            border: none;
+                            outline: none;
+                            border-radius: 20px;
+                            background-color: var(--text-color);
+                            font-size: 20px;
+                            color: var(--body-color);
+                            transition: 0.3s all;
+                            &::placeholder {
+                                color: var(--text-color);
+                                transition: 1s all;
+                            }
+                            &:focus {
+                                background-color: var(--text-color);
+                                border: none;
+                                padding-left: 8px;
+                                width: 120px;
+                                height: 28px;
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+                    #dark-mode {
+                        padding: 10px;
+                        display: inline-flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        background-color: rgb(20, 20, 49);
+                        width: 65px;
+                        height: 35px;
+                        border-radius: 20px;
+                        position: relative;
+                        cursor: pointer;
+                        i {
+                            font-size: 16px;
+                            color: yellow;
+                        }
+                        .button-darkmode {
+                            width: 25px;
+                            height: 25px;
+                            background-color: white;
+                            border-radius: 100%;
+                            position: absolute;
+                            left: 3px;
+                            transition: all 0.3s ease-in-out;
+                        }
+                        &.active {
+                            background-color: rgb(20, 20, 49);
+                            .button-darkmode {
+                                margin-left: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+            >h3 {
+                font-size: 30px;
+                color: var(--text-color);
+                width: 300px;
+                text-align: center;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            label {
+                font-size: 50px;
+                font-weight: 800;
+                color: var(--text-color);
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                transition: 0.5s all;
+            }
+        }
+    }
+}
+
+
+
+.list-todo {
+    .container {
+        max-width: 550px;
+        >form {
+            padding-bottom: 10px;
+            .form-group {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                input {
+                    width: 0;
+                    outline: none;
+                    border-radius: 20px;
+                    background-color: var(--input-color);
+                    border: none;
+                    padding-left: 0;
+                    font-size: 20px;
+                    color: var(--text-color);
+                    transition: 0.3s all;
+                    &::placeholder {
+                        color: rgb(85, 83, 83);
+                        transition: 1s all;
+                    }
+                    &:focus {
+                        border: 2px dashed var(--text-color);
+                        width: 100%;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+        ul {
+            li {
+                margin-bottom: 20px;
+                background-color: var(--input-color);
+                padding: 10px;
+                border-radius: 5px;
+                transition: 0.3s all;
+                &.onEdit {
+                    border: 1px solid red;
+                }
+
+                .task {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .tickIcon {
+                        margin-right: 10px;
+                        i {
+                            color: var(--text-color);
+                            font-size: 18px;
+                            cursor: pointer;
+                            transition: 0.2s all;
+                            &:hover {
+                                transform: scale(1.2);
+                            }
+                            &:active {
+                                transform: scale(1.1);
+                            }
+                            &.tickDone {
+                                color: green;
+                            }
+                        }
+                    }
+                    .content {
+                        text-overflow: ellipsis;
+                        width: 100%;
+                        border: none;
+                        outline: none;
+                        font-size: 25px;
+                        background-color: var(--input-color);
+                        color: var(--text-color);
+                        transition: 0.3s all;
+                        cursor: auto;
+                        &.tickDone {
+                            text-decoration: line-through 2px;
+                            text-decoration: --text-color;
+                        }
+                    }
+                    .fa-ellipsis-vertical {
+                        position: relative;
+                        font-size: 25px;
+                        padding: 0px 10px;
+                        color: var(--text-color);
+                        transition: 0.1s all;
+                        cursor: pointer;
+                        .icon {
+                            background-color: var(--toggle-color);
+                            padding: 10px;
+                            border-radius: 20px;
+
+                            &:hover {
+                                opacity: 1;
+                                visibility: visible;
+                                top: 30px;
+                                transform: scale(1);
+                            }
+                            &.active {
+                                opacity: 1;
+                                visibility: visible;
+                                top: 30px;
+                                transform: scale(1);
+                            }
+                            opacity: 0;
+                            visibility: hidden;
+
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+    
+                            position: absolute;
+                            left: -65px;
+                            top: 0px;
+                            transform: scale(0);
+    
+                            transition: 0.3s ease-in-out;
+                            i {
+                                font-size: 20px;
+                                cursor: pointer;
+                                transition: 0.2s all;
+                            }
+                            .fa-trash-can {
+                                color: #d34434;
+                                transform: scale(1.1);
+                                &:hover {
+                                    transform: scale(1.2);
+                                }
+                                &:active {
+                                    transform: scale(1.1);
+                                }
+                            }
+                            .editIcon {
+                                padding: 0px 10px;
+                                color: rgb(66, 66, 240);
+                                transform: scale(1.1);
+                                &:hover {
+                                    transform: scale(1.2);
+                                }
+                                &:active {
+                                    transform: scale(1.1);
+                                }
+                                .onEdit {
+                                    color: red;
+                                }
+                            }
+                            .calendar {
+                                .calendarForm {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    transition: 0.3s all;
+                                    &:active {
+                                        transform: scale(0.9);
+                                    }
+                                    &:hover button {
+                                        // display: block;
+                                        opacity: 1;
+                                        visibility: visible;
+                                        margin-left: 5px;
+                                        padding: 5px;
+                                        border: 2px solid var(--body-color);
+                                        width: 60px;
+                                    }
+                                    &:hover {
+                                        padding-right: 10px;
+                                        border-right: 1px var(--body-color) solid;
+                                    }
+                                    .classCalendar {
+                                        cursor: pointer;
+                                        width: 24px;
+                                        height: 24px;
+                                        background: url(/img/icons8-calendar-48.png) transparent;
+                                        background-size: 25px;
+                                        background-repeat: no-repeat;
+                                        background-position: 100%;
+                                        font-size: 20px;
+                                        font-weight: 700;
+                                        border: none;
+                                        border-radius: 10px;
+                                        outline: none;
+                                        color: transparent;
+                                        transition: all 0.3s;
+                                        transform: scale(1.3);
+                                        &::-webkit-calendar-picker-indicator {
+                                            opacity: 0;
+                                            cursor: pointer;
+                                        }
+                                        &:hover {
+                                            transform: scale((1.5));
+                                        }
+                                        &:active {
+                                            transform: scale(1.1);
+                                        }
+
+                                    }
+                                    button {
+                                        // display: none;
+                                        //----------------
+                                        opacity: 0;
+                                        visibility: hidden;
+                                        margin-left: 0px;
+                                        padding: -px;
+                                        border-radius: 5px;
+                                        border: 0px solid var(--body-color);
+                                        width: 0;
+                                        //----------------------
+                                        color: var(--body-color);
+                                        background-color: var(--text-color);
+                                        cursor: pointer;
+                                        font-weight: 700;
+                                        transition: 0.2s all;
+                                        &:hover {
+                                            transform: scale(1.1);
+                                        }
+                                        &:active {
+                                            transform: scale(0.9);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                .detail {
+                    padding: 5px 0px;
+                    display: flex;
+                    align-items: center;
+                    i {
+                        margin-right: 10px;
+                        color: var(--text-color);
+                        transition: 0.3s all;
+                    }
+                    input {
+                        width: 100%;
+                        background-color: var(--input-color);
+                        border: none;
+                        outline: none;
+                        font-size: 15px;
+                        font-weight: 400;
+                        color: var(--text-color);
+                        transition: 0.3s all;
+                        &::placeholder {
+                            color: var(--text-color);
+                            font-weight: 500;
+                        }
+                    }
+                }
+                .time {
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: var(--text-color);
+                    transition: 1s all;
+                    cursor: context-menu;
+                }
+            }
+        }
+    }
+}
+
+.clearAll {
+    .container {
+        max-width: 550px;
+        position: relative;
+        button {
+            position: absolute;
+            right: 0;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            color: var(--body-color);
+            background-color: var(--button-color);
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.2s all;
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+    }
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(92, 91, 91, 0.486);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: all 0.3s;
+    &:active {
+        transform: scale(0.8);
+    }
+}
+
+
+  
+
+@keyframes upAndDown {
+    to {
+        transform: translateY(-10px);
+    }
+}

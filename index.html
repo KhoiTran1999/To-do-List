@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="heading">
+        <div class="container">
+            <div class="row">
+                <h1>To do List</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="name-of-list">
+        <div class="container">
+            <div class="row">
+                <i class="fa-solid fa-bars" >
+                    <div class="ListOfList">
+                        <label for="idList" type="submit">+ New List</label>
+                        <div class="list-array">
+                            <!-- <button type="button" id="L${index}" data-id="${val}">
+                                <i class="fa-solid fa-list-ul"></i>
+                                ${val}
+                                <i class="fa-regular fa-circle-xmark" data-name="${val}"></i>
+                            </button> -->
+                        </div>
+                        <form action="AddNewList">
+                            <input id="idList" type="text" placeholder="Name List" required>
+                        </form>
+
+                        <div id="dark-mode">
+                            <i class="fa-solid fa-sun"></i>
+                            <i class="fa-solid fa-moon"></i>
+                            <div class="button-darkmode"></div>
+                        </div>
+
+                    </div>
+                </i>
+                <h3 class="main-name"></h3>
+                <label id="add-new-task" for="upform" type="submit" title="Add new task">+</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="list-todo" id="form">
+        <div class="container">
+            <form action="input">
+                <div class="form-group">
+                    <input id="upform" type="text" placeholder="New Task To Do" required>
+                </div>
+            </form>
+            <ul>
+                <li>
+                    <div class="task">
+                        <span class="tickIcon">
+                            <i class="fa-regular fa-circle-check" title="tick Done/Not Done" data-id="${id}"></i>
+                        </span>
+                        <input type="text" class="content" value="${content}" readonly required id="a${index}">
+                        <i class="fa-solid fa-ellipsis-vertical">
+                            <div class="icon">
+                                <span class="calendar">
+                                    <form action="calendar" class="calendarForm">
+                                        <input type="datetime-local" class="classCalendar" title="Calendar" required data-id="${id}">
+                                        <button title="Press submit when date is choosed\nOr Press enter twice to confirm">submit</button>
+                                    </form>
+                                </span>
+                                <span class="editIcon">
+                                <label for="a${index}"><i class="fa-solid fa-pen-to-square" title="Edit" data-id="${id}"></i></label>
+                                </span>
+                                <span class="deleteIcon">
+                                    <i class="fa-solid fa-trash-can" title="Delete" data-id="${id}"></i>
+                                </span>
+                            </div>
+                        </i>
+                    </div>
+                    <span class="time"><i class="fa-solid fa-bell"></i> Time Remaining: <i>${timeRemaing}</i></span>
+                    <form class="detail">
+                        <i class="fa-solid fa-align-left" title="Add Detail"></i>
+                        <input type="text" class="inputDetail" placeholder="Press Enter when Detail is added" value="${moreDetail}" data-id="${id}">
+                    </form>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="clearAll">
+        <div class="container">
+            <button type="button">Clear All</button>
+        </div>
+    </div>
+
+    
+
+    <a href="#" id="back-to-top"><i class="fa-solid fa-angles-up"></i></a>
+
+    <script src="/script.js"></script>
+</body>
+</html>
