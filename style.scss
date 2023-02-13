@@ -15,9 +15,12 @@ html {scroll-behavior: smooth;}
 }
 
 .container {
-    max-width: 600px;
+    max-width: 500px;
     width: 100%;
     margin: 0 auto;
+    @media screen and (max-width: 450px){
+        max-width: 310px;
+    }
 }
 
 body {
@@ -235,7 +238,10 @@ body {
 
 .list-todo {
     .container {
-        max-width: 550px;
+        max-width: 450px;
+        @media screen and (max-width: 450px){
+            max-width: 300px;
+        }
         >form {
             padding-bottom: 10px;
             .form-group {

@@ -15,9 +15,14 @@ html {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
   margin: 0 auto;
+}
+@media screen and (max-width: 450px) {
+  .container {
+    max-width: 310px;
+  }
 }
 
 body {
@@ -166,11 +171,6 @@ body {
   -moz-transition: 1s all;
   transition: 1s all;
 }
-.name-of-list .container .row > i .ListOfList form input:-ms-input-placeholder {
-  color: var(--text-color);
-  -ms-transition: 1s all;
-  transition: 1s all;
-}
 .name-of-list .container .row > i .ListOfList form input::placeholder {
   color: var(--text-color);
   transition: 1s all;
@@ -233,7 +233,12 @@ body {
 }
 
 .list-todo .container {
-  max-width: 550px;
+  max-width: 450px;
+}
+@media screen and (max-width: 450px) {
+  .list-todo .container {
+    max-width: 300px;
+  }
 }
 .list-todo .container > form {
   padding-bottom: 10px;
@@ -257,11 +262,6 @@ body {
 .list-todo .container > form .form-group input::-moz-placeholder {
   color: rgb(85, 83, 83);
   -moz-transition: 1s all;
-  transition: 1s all;
-}
-.list-todo .container > form .form-group input:-ms-input-placeholder {
-  color: rgb(85, 83, 83);
-  -ms-transition: 1s all;
   transition: 1s all;
 }
 .list-todo .container > form .form-group input::placeholder {
@@ -479,10 +479,6 @@ body {
   color: var(--text-color);
   font-weight: 500;
 }
-.list-todo .container ul li .detail input:-ms-input-placeholder {
-  color: var(--text-color);
-  font-weight: 500;
-}
 .list-todo .container ul li .detail input::placeholder {
   color: var(--text-color);
   font-weight: 500;
@@ -527,12 +523,6 @@ body {
 }
 #back-to-top:active {
   transform: scale(0.8);
-}
-
-@-webkit-keyframes upAndDown {
-  to {
-    transform: translateY(-10px);
-  }
 }
 
 @keyframes upAndDown {
